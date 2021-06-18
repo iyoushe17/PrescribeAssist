@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+</head>
+<body>
+
+	<header>
+		<h1>PrescribeAssist</h1>
+		<h2>Doctor's Assistant</h2>
+	</header>
+
+	<div>
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Please enter your symptom</p>
+		<!-- <input type="text" name="comment"/> -->
+		<textarea name="message" rows="6" cols="50"></textarea>
+		<br/>
+		<input type="submit" class="btn-info" value="predict">
+	</form>
+    <br>
+    <br>
+    {{ dispCondition }}
+    {{ dispDrugname }}
+	</div>
+
+	
+	
+
+</body>
+</html>
