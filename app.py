@@ -4,9 +4,9 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 
 
-modelPath = "models\PrescribeAssistModel.sav"
-vectPath = "models\PrescribeAssistVectorizer.sav"
-prescribeDBPath = "data\prescribeDB.csv"
+modelPath = "models/PrescribeAssistModel.sav"
+vectPath = "models/PrescribeAssistVectorizer.sav"
+prescribeDBPath = "data/prescribeDB.csv"
 
 prescriberModel = pickle.load(open(modelPath, 'rb'))
 prescriberVectorizer = pickle.load(open(vectPath, 'rb'))
