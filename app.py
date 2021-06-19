@@ -23,7 +23,7 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
-        symptomEntered = request.form['message']
+        symptomEntered = request.form['symptom']
         conditionPredicted = prescriberModel.predict(prescriberVectorizer.transform([symptomEntered]))[0]
 
     df_result = df.loc[df.condition_cat==conditionPredicted]
