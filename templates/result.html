@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+        <header>
+            <div>
+                <h3>Condition: </h3>
+                {{ data.get_condition() }}
+            </div>
+            <div>
+                <h3>Drug: </h3>
+                {{ data.get_drug() }}
+            </div>
+        </header>
+        <body>
+            <div>
+                <h4>Is the condition correct?</h4>
+            </div>
+            <div>
+                <a href="conditionCorrect_yes"><button type="button" value="yes">YES</button></a>
+                <a href="conditionCorrect_no"><button type="button" value="no">NO</button></a>
+            </div>
+            
+            {% if data.get_condition_status() and data.get_drug_status() %}
+                <h3>Thanks</h3>
+            {% elif data.get_condition_status() and data.get_drug_status() == False%}
+                <h5>Is the drug correct?</h5>
+                <a href="drugCorrect_yes"><button type="button" value="yes">YES</button></a>
+                <a href="drugCorrect_no"><button type="button" value="no">NO</button></a>
+                {% if data.get_drug_status() = False}
+                    <div>
+                        <form action="{{ url_for('changeWrongDrug')}}" method="POST">
+                        <h5>Please enter correct drug.</h5>
+                        <input type="text" name="drugCorrection">
+                        <input type="submit" class="btn-info" value="submit">
+                    </div>
+            {% else %}
+                <div>
+                    <form action="{{ url_for('changeBothConditionDrug')}}" method="POST">
+                        <h5>Please enter correct condition.</h5>
+                        <input type="text" name="conditionCorrection">
+                        <h5>Please enter correct drug.</h5>
+                        <input type="text" name="drugCorrection">
+                        <input type="submit" class="btn-info" value="submit">
+                    </form>
+                </div>
+            {% endif %}
+        </body>

@@ -26,6 +26,16 @@
     {{ dispDrugname }}
 	</div>
 
+	{% if feedBackSwitch == True %}
+		<div>
+			<h3>Was the predicted condition correct?</h3>
+			<div>
+				<a href="feedback_yes"><button type="button" value="yes">YES</button></a>
+				<a href="feedback_no"><button type="button" value="no">NO</button></a>
+			</div>
+		</div>
+	{% else %}
+	{% endif %}
 	
 	
 
