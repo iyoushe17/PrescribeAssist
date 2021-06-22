@@ -40,7 +40,7 @@ class Results:
 
     def get_condition(self):
         return self.condition
-    
+
     def reset_params(self):
         self.symptom = ""
         self.drug = ""
