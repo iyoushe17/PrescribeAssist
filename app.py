@@ -1,11 +1,11 @@
-#import numpy as np
+import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify, render_template
 import pickle
 
 modelPath = "models/PrescribeAssistModel.sav"
 vectPath = "models/PrescribeAssistVectorizer.sav"
-prescribeDBPath = "data/prescribeDB.csv"
+prescribeDBPath = "data/prescribeDB_small.csv"
 
 prescriberModel = pickle.load(open(modelPath, 'rb'))
 prescriberVectorizer = pickle.load(open(vectPath, 'rb'))
