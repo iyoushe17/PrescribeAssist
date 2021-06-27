@@ -15,7 +15,7 @@
 	<div>
 		<form action="{{ url_for('predict')}}" method="POST">
 		<p>Please enter your symptom</p>
-		<textarea name="symptom" rows="6" cols="50"></textarea>
+		<textarea id = "symptom-textbox" name="symptom" rows="6" cols="50"></textarea>
 		<br/>
 		<input type="submit" class="btn-info" value="predict">
 	</form>
