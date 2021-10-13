@@ -9,7 +9,7 @@ PrescribeAssist leverages the power of data and NLP and predicts the illness bas
 
 
 ## Install and run
-  ``` pip install -r requirements.txt```  
-  ``` python app.py```
+1.   ``` pip install -r requirements.txt```  
+2.   ``` python app.py```
 
 
